@@ -1,28 +1,67 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <pagination-control :settings="settings">
+    <PaginationControlSettings/>
+    </pagination-control>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { PaginationControl } from 'vue-smart-pagination'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PaginationControl
+  },
+  data: function () {
+    return {
+      arrayData: [
+        {
+          data: 'Page № 1'
+        },
+        {
+          data: 'Page № 2'
+        },
+        {
+          data: 'Page № 3'
+        },
+        {
+          data: 'Page № 4'
+        },
+        {
+          data: 'Page № 5'
+        },
+        {
+          data: 'Page № 6'
+        },
+        {
+          data: 'Page № 7'
+        },
+        {
+          data: 'Page № 8'
+        },
+        {
+          data: 'Page № 9'
+        },
+        {
+          data: 'Page № 10'
+        },
+        {
+          data: 'Page № 11'
+        },
+        {
+          data: 'Page № 12'
+        },
+      ]
+    }
+  },
+  computed: {
+    settings: function () {
+      return {
+        arrayData: this.arrayData
+      }
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
